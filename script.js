@@ -36,5 +36,5 @@ Promise.all(promiseall).then((imgURLs)=>{
 }).catch((error)=>{
 	console.error(error);
 });
-});
+
 
