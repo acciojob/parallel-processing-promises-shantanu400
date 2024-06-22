@@ -22,9 +22,9 @@ const btn = document.getElementById("download-images-button").addEventListener('
 			.catch(()=>rej(`Failed to load image's URL: ${img.url}`));
 			
 		
-	})
+	});
 	
-})
+});
 
 Promise.all(promiseall).then((imgURLs)=>{
 	output.innerHTML=``
@@ -35,6 +35,7 @@ Promise.all(promiseall).then((imgURLs)=>{
 	});
 }).catch((error)=>{
 	console.error(error);
+});
 });
 
 
