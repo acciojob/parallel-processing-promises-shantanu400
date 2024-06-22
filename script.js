@@ -13,8 +13,8 @@ const btn = document.getElementById("download-images-button").addEventListener('
 	promiseall=images.map((img)=>{
 		return new Promise((res,rej)=>{
 			fetch(img.url)
-			.then(res=>res.blob())
-			.then(blob=>{
+			.then((res)=>res.blob())
+			.then((blob)=>{
 				let imgURL=URL.createObjectURL(blob);
 				res(imgURL);
 				
@@ -28,9 +28,9 @@ const btn = document.getElementById("download-images-button").addEventListener('
 
 Promise.all(promiseall).then((imgURLs)=>{
 	output.innerHTML=``
-	imgURLs.forEach((imgURL)=>{
+	imgURLs.forEach((img)=>{
 		output.innerHTML+=`
-		<img src=${imgURL}>
+		<img src=${img}>
 		`;
 	});
 }).catch((error)=>{
