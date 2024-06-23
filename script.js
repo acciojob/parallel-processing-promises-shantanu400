@@ -12,14 +12,14 @@ const btn = document.getElementById("download-images-button").addEventListener('
 	
 	promiseall=images.map((img)=>{
 		return new Promise((res,rej)=>{
-			setTimeout((=>{
+			setTimeout(()=>{
 				fetch(img.url)
 			.then((res)=>res.blob())
 			.then((blob)=>{
 				let imgURL=URL.createObjectURL(blob);
 				res(imgURL);
 			
-			}),1000);
+			},1000);
 				
 			})
 			.catch(()=>rej(`Failed to load image's URL: ${img.url}`));
