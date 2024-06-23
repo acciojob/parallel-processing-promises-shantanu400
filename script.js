@@ -29,9 +29,7 @@ const btn = document.getElementById("download-images-button").addEventListener('
 Promise.all(promiseall).then((imgURLs)=>{
 	output.innerHTML=``
 	imgURLs.forEach((imgis)=>{
-		output.innerHTML+=`
-		<img src=${imgis}>
-		`;
+		output.innerHTML+=`<img src=${imgis}>`;
 	});
 }).catch((error)=>{
 	console.error(error);
